@@ -43,8 +43,9 @@ app.post("/generate-pdf", (req, res) => {
     console.log(err);
     res.status(500).json({ error: "failed to generate PDF" });
   });
-  app.use("/pdfs", express.static(pdfDir));
+  
 });
+app.use("/pdfs", express.static(pdfDir));
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
